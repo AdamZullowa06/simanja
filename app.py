@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
+from wtforms import StringField, TextAreaField, SubmitField, validators
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "zullowa06"
@@ -12,7 +12,9 @@ class testForm(FlaskForm):
     nohp = StringField('Nomor Hp :')
     email = StringField('Email Pribadi:')
     ktp = StringField('No KTP :')
-    alamat = StringField('Alamat KTP : ')
+    alamat = TextAreaField(
+        'Alamat KTP : ')
+    submit = SubmitField(label=('Submit'))
 
 
 @app.route("/")

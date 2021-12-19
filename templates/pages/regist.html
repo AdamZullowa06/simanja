@@ -34,6 +34,20 @@
                       {{form.alamat(class="form-control")}}
                   </div>
                           
+                  <h2 class="text-center">Apakah dalam 14 hari terakhir anda pernah</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="suhu" value="3">
+                          <input class="form-check-input" type="radio" name="item_suhu" id="suhu" value="Pernah mengukur suhu tubuh">
+                          <label class="form-check-label">Mengukur Suhu</label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="suhu" value="2">
+                          <input class="form-check-input" type="radio" name="item_suhu" id="suhu" value="Tidak pernah mengukur suhu tubuh">
+                          <label class="form-check-label">Tidak Pernah</label>
+                      </div>
+                  </div>
+
                   <h2 class="text-center">Apakah dalam 14 hari terakhir anda mengalami</h2>
                   <div class="form-group my-5">
                       <div class="form-check">
@@ -369,7 +383,7 @@
                       </div>
                   </div>
 
-                  <input type="submit" value="Submit" class="btn btn-primary form-control">
+                  {{form.submit(class="btn btn-primary form-control")}}
               </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 <section class="page-section" id="result">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <h2 class="text-center mt-5">Hasil Pemeriksaan<br>Tes Mandiri Corona</h2>
+            <h2 class="text-center mt-5">Rangkuman<br>Jawaban Anda</h2>
         </div>
         <div class="row justify-content-center">
             <div class="card my-5 card-summary">
@@ -110,6 +110,9 @@
                 </div>
         </div>
         <div class="row justify-content-center">
+            <h2 class="text-center mt-5">Hasil Perhitungan Jawaban</h2>
+        </div>
+        <div class="row justify-content-center">
             <div class="card my-5 card-result">
                 <div class="card-body">
                     <h4>Hasil Test</h4>
@@ -124,14 +127,90 @@
                     <div class="card-text">
                         {% if total <= 30 %}
                         <p class="card-text">Anda Termasuk dalam kategori Level 1 Risiko Rendah</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="text-center">
+                                  Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-2.svg" alt="clm-logo">
+                                    </div>
+                                    <div class="col-lg-6 mr-auto my-auto">
+                                        <p>
+                                            Orang dengan <strong class="text-success">risiko rendah</strong>
+                                        </p>
+                                        <ul>
+                                            <li>Usahakan untuk tetap di rumah dan kurangi aktivitas luar rumah</li>
+                                            <li>Tetap patuhi protokol kesehatan</li>
+                                            <li>Utamakan berkegiatan atau bepergian hanya dalam ruangan dengan ventilasi udara yang baik</li>
+                                            <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak selama beraktivitas</li>
+                                            <li>Silakan lakukan tes secara berkala untuk tetap memantau kondisi kesehatan Anda</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {% elif total <= 60 %}
                         <p class="card-text">Anda Termasuk dalam kategori Level 2 Risiko Sedang</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="text-center">
+                                    Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-1.svg" alt="clm-logo">
+                                    </div>
+                                    <div class="col-lg-6 mr-auto my-auto">
+                                        <p>
+                                            Orang dengan <strong class="text-warning">risiko sedang</strong>
+                                        </p>
+                                        <ul>
+                                            <li>Anda diimbau untuk tetap di rumah untuk melindungi diri sendiri dan orang di sekitar Anda</li>
+                                            <li>Upayakan berada dalam ruangan dengan ventilasi udara yang baik</li>
+                                            <li>Apabila mendesak dan perlu keluar rumah, mohon patuhi protokol kesehatan</li>
+                                            <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak</li>
+                                            <li>Jika muncul gejala atau gejala bertambah parah, segear hubungi fasilitas layanan kesehatan</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {% else %}
                         <p class="card-text">Anda Termasuk dalam kategori Level 3 Risiko Tinggi</p>
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="text-center">
+                                    Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                                </p>
+                                <div class="row">
+                                <div class="col-lg-6">
+                                    <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-3.svg" alt="clm-logo">
+                                </div>
+                                    <div class="col-lg-6 mr-auto my-auto">
+                                        <p>
+                                            Orang dengan <strong class="text-danger">risiko tinggi</strong>
+                                        </p>
+                                        <ul>
+                                            <li>Segera lakukan tes PCR/swab test di fasilitas layanan kesehatan terdekat</li>
+                                            <li>Anda diminta untuk mengisolasi diri selama 14 hari di rumah, tidak berkontak dengan orang lain, dan memantau kesehatan Anda hingga benar-benar pulih</li>
+                                            <li>Anda dimohon untuk tidak keluar rumah demi melindungi diri sendiri dan orang di sekitar Anda</li>
+                                            <li>Upayakan berada dalam ruangan dengan ventilasi udara yang baik</li>
+                                            <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak</li>
+                                            <li>Jika muncul gejala atau gejala bertambah parah, segera hubungi fasilitas layanan kesehatan</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <a href="{{ url_for('home') }}" class="btn btn-primary btn-block btn-lg">Kembali ke Menu</a>
         </div>
     </div>
 </section>
