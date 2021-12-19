@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-section" id="registrasi">
+    <div class="container-fluid">
+      <form method="POST" action="{{ url_for('regist') }}">
+      <div class="row justify-content-center">
+          <div class="card my-5 card-regist">
+            <div class="container">
+              <div class="card-body">
+                <h2 class="text-center">Identitas Diri</h2>
+                  <div class="form-group my-5">
+                    {{form.csrf_token}}
+                    {{form.nama.label}}
+                    {{form.nama(class="form-control")}}
+                    {{form.umur.label}}
+                    {{form.umur(class="form-control")}}
+                    <label for="" class="form-label">Jenis Kelamin :</label>
+                      <div class="form-check" required>
+                          <input class="form-check-input" type="radio" name="kelamin" id="kelamin" value="pria">
+                          <label class="form-check-label">Pria</label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="kelamin" id="kelamin" value="wanita">
+                          <label class="form-check-label">Wanita</label>
+                      </div>
+                      {{form.nohp.label}}
+                      {{form.nohp(class="form-control")}}
+                      {{form.email.label}}
+                      {{form.email(class="form-control")}}
+                      {{form.ktp.label}}
+                      {{form.ktp(class="form-control")}}
+                      {{form.alamat.label}}
+                      {{form.alamat(class="form-control")}}
+                  </div>
+                          
+                  <h2 class="text-center">Apakah dalam 14 hari terakhir anda mengalami</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="napas" value="3">
+                          <input class="form-check-input" type="radio" name="item_napas" id="napas" value="Pernah mengalami sesak napas">
+                          <label class="form-check-label">Gejala Sesak Napas</label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="napas" value="2">
+                          <input class="form-check-input" type="radio" name="item_napas" id="napas" value="Tidak pernah mengalami sesak napas">
+                          <label class="form-check-label">Tidak Pernah</label>
+                      </div>
+                  </div>
+
+                  <h2 class="text-center">Pilih gejala yang Anda alami dalam 14 hari terakhir</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Batuk" id="batuk">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Batuk
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Pilek" id="pilek">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Pilek
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Nyeri Tenggorokan" id="nyeri_tenggorokan">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Nyeri Tenggorokan
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Sakit Kepala" id="sakit_kepala">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Sakit Kepala
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Menggigil" id="mengggigil">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Mengggigil
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Lemah atau lemas" id="lemes">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Lemah atau lemas
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Nyeri Otot" id="nyeri_otot">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Nyeri Otot
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Mual atau Muntah" id="mual">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Mual atau muntah
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Nyeri Perut" id="nyeri_perut">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Nyeri Perut
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Diare" id="diare">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Diare
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Kemampuan mencium bau berkurang" id="mencium">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Kemampuan mencium bau berkurang
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Kemampuan mengecap rasa berkurang" id="mengecap">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Kemampuan mengecap rasa berkurang
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="2">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Lainnya" id="lainnya">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Lainnya
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="gejala" value="0">
+                          <input class="form-check-input" name="item_gejala" type="checkbox" value="Tidak memiliki gejala" id="nihil">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Tidak semuanya
+                          </label>
+                      </div>
+                  </div>
+                  
+                  <h2 class="text-center">Pilih kondisi kesehatan yang sedang Anda alami</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Hamil" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Hamil
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Diabetes Melitus/Kencing Manis/Sakit Gula" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Diabetes Melitus/Kencing Manis/Sakit Gula
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Penyakit Jantung" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Penyakit Jantung
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Hipertensi/Tekanan Darah Tinggi" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Hipertensi/Tekanan Darah Tinggi
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Penyakit Kanker/Keganasan" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Penyakit Kanker/Keganasan
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Gangguan Sistem Imun" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Gangguan Sistem Imun
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Gangguan Ginjal Kronik" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Gangguan Ginjal Kronik
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Gangguan Hati" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Gangguan Hati
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Asma" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Asma
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Alergi" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Alergi
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Tuberkolosis" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Tuberkolosis
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="2">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Lainnya" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Lainnya
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kondisi" value="1">
+                          <input class="form-check-input" name="item_kondisi" type="checkbox" value="Tidak memiliki riwayat kondisi" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Tidak semuanya
+                          </label>
+                      </div>
+                  </div>
+
+                  <h2 class="text-center">Apakah dalam 14 hari Anda</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="kontak1" value="8">
+                          <input class="form-check-input" type="radio" name="item_kontak1" id="kontak1" value="Pernah Berkontak dengan Pasien Positif atau Suspek Covid-19">
+                          <label class="form-check-label">Pernah Berkontak dengan Pasien Positif atau Suspek Covid-19</label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kontak1" value="1">
+                          <input class="form-check-input" type="radio" name="item_kontak1" id="kontak1" value="Tidak Pernah Berkontak dengan Pasien Positif atau Suspek Covid-19">
+                          <label class="form-check-label">Tidak Pernah Berkontak dengan Pasien Positif atau Suspek Covid-19</label>
+                      </div>
+                  </div>
+
+                  <h2 class="text-center">Apakah dalam 14 hari Anda</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="kontak2" value="8">
+                          <input class="form-check-input" type="radio" name="item_kontak2" id="kontak2" value="Pernah Berkontak dengan Pasien dalam Pengawasan (PDP)">
+                          <label class="form-check-label">Pernah Berkontak dengan Pasien dalam Pengawasan (PDP)</label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kontak2" value="1">
+                          <input class="form-check-input" type="radio" name="item_kontak2" id="kontak2" value="Tidak Pernah Berkontak dengan Pasien dalam Pengawasan (PDP)">
+                          <label class="form-check-label">Tidak Pernah Berkontak dengan Pasien dalam Pengawasan (PDP)</label>
+                      </div>
+                  </div>
+
+                  <h2 class="text-center">Apakah dalam 14 hari Anda</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="kontak3" value="8">
+                          <input class="form-check-input" type="radio" name="item_kontak3" id="kontak3" value="Saya Petugas Kesehatan/Bekerja di Fasilitas Kesehatan yang Menangani Pasien">
+                          <label class="form-check-label">Saya Petugas Kesehatan/Bekerja di Fasilitas Kesehatan yang Menangani Pasien</label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="kontak3" value="1">
+                          <input class="form-check-input" type="radio" name="item_kontak3" id="kontak3" value="Tidak Terlibat Menangani Pasien">
+                          <label class="form-check-label">Tidak Terlibat Menangani Pasien</label>
+                      </div>
+                  </div>
+
+                  <h2 class="text-center">Apakah dalam 14 hari Anda Bepergian ke :</h2>
+                  <div class="form-group my-5">
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Amerika Serikat" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Amerika Serikat
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Jakarta" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Jakarta
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Jawa Barat" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Jawa Barat
+                          </label>
+                      </div>
+
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Jawa Timur" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Jawa Timur
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Bali" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Bali
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Italia" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Italia
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Korea Selatan" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Korea Selatan
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Singapura" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Singapura
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="pergi" type="checkbox" value="Tiongkok" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Tiongkok
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="2">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Lainnya" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Lainnya
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <input type="hidden" name="pergi" value="0">
+                          <input class="form-check-input" name="item_pergi" type="checkbox" value="Tidak Bepergian" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                            Tidak Bepergian
+                          </label>
+                      </div>
+                  </div>
+
+                  <input type="submit" value="Submit" class="btn btn-primary form-control">
+              </div>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<style>
+  .card-regist {
+    border-style: none;
+  }
+</style>
+{% endblock %}

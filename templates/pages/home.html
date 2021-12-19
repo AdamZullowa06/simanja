@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<header class="masthead bg-info text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading mb-0">SiMANJA</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-virus"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0 text-light">Sistem Informasi Mandiri Gejala <strong class="font-weight-bold">COVID-19</strong></p>
+        <div class="text-center mt-5">
+            <a class="btn btn-xl btn-pill btn-outline-light" href="{{ url_for('regist') }}">
+                <strong>Ikuti Tes</strong>
+            </a>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<!-- Tentang Section-->
+<section class="page-section" id="tentang">
+    <div class="container">
+        <!-- About Section Heading-->
+        <!-- Icon Divider-->
+        <!-- <div class="divider-custom ">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div> -->
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 ml-auto mt-auto mb-auto">
+                <h6 class="page-section-heading">Apa itu SiMANJA?</h6><br>
+                <p class="lead">
+                    Simanja merupakan aplikasi pengujian atau screening mandiri berteknologi machine learning. Simanja ditunjukan untuk membantu anda dalam mengukur risiko kemungkinan anda positif COVID-19 dan rekomendasikan apa yang harus anda lakukan
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+                <img class="img-fluid py-3 ml-auto mr-auto" src="static/assets/img/clm-logo.svg" alt="clm-logo" style="width: 50%; height: auto;">
+            </div>
+        </div>
+        <!-- About Section Button-->
+    </div>
+</section>
+<!-- Proses Section-->
+<section class="page-section mb-0" id="proses">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center mb-5">Bagaimana cara kerjanya?</h2>
+        <!-- About Section Content-->
+        <div class="row mb-5">
+            <div class="col-lg-6 ml-auto mr-auto mb-5">
+                <img src="static/assets/img/clm-img-1.svg" alt="clm-logo">
+            </div>
+            <div class="col-lg-6 mr-auto my-auto">
+                <p>
+                    Proses pembentukan program ini dimulai dengan data preprocessing.
+                    yaitu dengan membersihkan data yang ada sehingga siap dihitung oleh
+                    model program kami.
+                </p>
+                <p>
+                    Kami kemudian perhitungkan dengan 80% dari data yang ada. Performa model-model
+                    tersebut kami uji dengan menggunakan beberapa kriteria, yaitu akurasi, presisi, dan
+                    sensivitas dengan menggunakan 25% data pengujian (testing data).
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 ml-auto mr-auto">
+                <img src="static/assets/img/clm-img-2.svg" style="width: 267px;" alt="clm-logo">
+            </div>
+            <div class="col-lg-6 mr-auto my-auto">
+                <p>
+                    Model dengan performa terbaik selanjutnya dievaluasi untuk program ini,
+                    yang kemudian dapat digunakan masyarakat untuk mengetahui lebih lanjut mengenai
+                    persentase risiko positif COVID-19.
+                </p>
+                <p>
+                    Sebagai catatan, mesin ini terus dipantau dan dikembangkan 
+                    dengan data terbaru yang kami dapat.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Risiko Section -->
+<section class="page-section mb-0" id="risiko">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center mb-3">Perhitungan Risiko dalam aplikasi</h2>
+        <p class="text-center mb-5">
+            Tiga tipe data yang menjadi acuan atau referensi perhitungan aplikasi
+        </p>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-4 ml-auto mr-auto my-auto text-center">
+                <img src="static/assets/img/clm-risk-img-1.svg" alt="clm-logo">
+                <p>Kondisi Demografi</p>
+            </div>
+            <div class="col-lg-4 ml-auto mr-auto my-auto text-center">
+                <img src="static/assets/img/fever-svgrepo-com.svg" width="197" height="197" alt="clm-logo">
+                <p>Riwayat Gejala COVID-19</p>
+            </div>
+            <div class="col-lg-4 ml-auto mr-auto my-auto text-center">
+                <img src="static/assets/img/clm-risk-img-3.svg" alt="clm-logo">
+                <p>Riwayat Pasien</p>
+            </div>
+        </div>
+        <div class="alert alert-info text-center mt-4" role="alert">
+            <p class="lead my-auto">
+                Model aplikasi juga memperhatikan data riwayat kesehatan pasien yang diperiksa dan terindikasi
+                COVID-19.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Tips Section-->
+<section class="page-section" id="tips">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Tata Cara Tes</h2>
+        <p class="text-center my-2">Tes dilakukan melalui aplikasi web</p>
+        <!-- Contact Section Form-->
+        <div class="card-group mt-5">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/img/home.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">1. Buka Website SiMANJA lalu klik "ikuti tes"</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="static/assets/img/questioner.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">2. Isi identitas diri dan jawab pertanyaan sesuai kondisi kesehatan dan riwayat yang anda alami dengan jujur</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="static/assets/img/hasil.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">3. Lihat rangkuman jawaban dan lihat kembali hasil tes</h5>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+<!-- Hasil Section -->
+<section class="page-section mb-0" id="hasil">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center mb-5">Bagaimana Hasil Tes nya?</h2>
+        <!-- About Section Content-->
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-virus text-success"></i> <strong>Level 1 Risiko Rendah</strong>
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p class="text-center">
+                    Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                  </p>
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-2.svg" alt="clm-logo">
+                    </div>
+                    <div class="col-lg-6 mr-auto my-auto">
+                        <p>
+                            Orang dengan <strong class="text-success">risiko rendah</strong>
+                        </p>
+                        <ul>
+                            <li>Usahakan untuk tetap di rumah dan kurangi aktivitas luar rumah</li>
+                            <li>Tetap patuhi protokol kesehatan</li>
+                            <li>Utamakan berkegiatan atau bepergian hanya dalam ruangan dengan ventilasi udara yang baik</li>
+                            <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak selama beraktivitas</li>
+                            <li>Silakan lakukan tes secara berkala untuk tetap memantau kondisi kesehatan Anda</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-virus text-warning"></i> <strong>Level 2 Risiko Sedang</strong>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p class="text-center">
+                        Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                      </p>
+                      <div class="row">
+                        <div class="col-lg-6">
+                            <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-1.svg" alt="clm-logo">
+                        </div>
+                        <div class="col-lg-6 mr-auto my-auto">
+                            <p>
+                                Orang dengan <strong class="text-warning">risiko sedang</strong>
+                            </p>
+                            <ul>
+                                <li>Anda diimbau untuk tetap di rumah untuk melindungi diri sendiri dan orang di sekitar Anda</li>
+                                <li>Upayakan berada dalam ruangan dengan ventilasi udara yang baik</li>
+                                <li>Apabila mendesak dan perlu keluar rumah, mohon patuhi protokol kesehatan</li>
+                                <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak</li>
+                                <li>Jika muncul gejala atau gejala bertambah parah, segear hubungi fasilitas layanan kesehatan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fas fa-virus text-danger"></i> <strong>Level 3 Risiko Tinggi</strong>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p class="text-center">
+                        Berikut hal yang bisa Anda lakukan dan rekomendasi agar tetap aman:  
+                      </p>
+                      <div class="row">
+                        <div class="col-lg-6">
+                            <img class="my-auto mx-auto img-fluid" src="static/assets/img/clm-risk-3.svg" alt="clm-logo">
+                        </div>
+                        <div class="col-lg-6 mr-auto my-auto">
+                            <p>
+                                Orang dengan <strong class="text-danger">risiko tinggi</strong>
+                            </p>
+                            <ul>
+                                <li>Segera lakukan tes PCR/swab test di fasilitas layanan kesehatan terdekat</li>
+                                <li>Anda diminta untuk mengisolasi diri selama 14 hari di rumah, tidak berkontak dengan orang lain, dan memantau kesehatan Anda hingga benar-benar pulih</li>
+                                <li>Anda dimohon untuk tidak keluar rumah demi melindungi diri sendiri dan orang di sekitar Anda</li>
+                                <li>Upayakan berada dalam ruangan dengan ventilasi udara yang baik</li>
+                                <li>Lakukan 3M: menggunakan masker, mencuci tangan, dan menjaga jarak</li>
+                                <li>Jika muncul gejala atau gejala bertambah parah, segera hubungi fasilitas layanan kesehatan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+{% endblock %}
